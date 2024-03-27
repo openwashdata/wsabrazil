@@ -20,6 +20,7 @@ variable_description <- codebook |>
   select(description)
 colnames(data_in)[1] <- "col"
 
+# Split column
 data <- data_in |>
   separate(col = col, into = c("id", "sector_code", "municipality_name", "municipality_code",
                                  "sector_situation", "MR_name", "sector_type", "V005_bas",
@@ -29,10 +30,20 @@ data <- data_in |>
 
 data <- data |>
   select(-id)
-variable_types <- sapply(data, typeof)
+
+# Modify sector_situation and sector_type variables
+data_adjusted_1 <- data |>
+  mutate(sector_situation = case_when(
+    sector_situation %in% c(1, 2, 3) ~ "urban", sector_situation %in% c(4, 5, 6) ~ "rural"
+  )) |>
+  mutate(sector_type = case_when(
+    sector_type == "slum" ~ 1, sector_type == "not_slum" ~ 0
+  ))
+
+wsabrazil <- data_adjusted_1
 
 # Write data -------------------------------------------------------------
-usethis::use_data(DATASET, overwrite = TRUE)
+usethis::use_data(wsabrazil, overwrite = TRUE)
 fs::dir_create(here::here("inst", "extdata"))
-write_csv(DATASET, here::here("inst", "extdata", "DATASET.csv"))
-openxlsx::write.xlsx(DATASET, here::here("inst", "extdata", "DATASET.xlsx"))
+write_csv(wsabrazil, here::here("inst", "extdata", "wsabrazil.csv"))
+openxlsx::write.xlsx(wsabrazil, here::here("inst", "extdata", "wsabrazil.xlsx"))
