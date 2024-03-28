@@ -23,13 +23,13 @@ colnames(data_in)[1] <- "col"
 # Split column
 data <- data_in |>
   separate(col = col, into = c("id", "sector_code", "municipality_name", "municipality_code",
-                                 "sector_situation", "MR_name", "sector_type", "V005_bas",
-                                 "V002_h01", "V012_h01", "V013_h01","V014_h01", "V015_h01", "V016_h01",
-                                 "V017_h01", "V018_h01", "V019_h01", "V020_h01", "V021_h01", "V022_h01",
-                                 "V002_h02"), sep = ";", convert = TRUE)
+                               "sector_situation", "MR_name", "sector_type", "avg_income",
+                               "total_households", "piped_water", "well_spring_water","stored_rainwater", "other_water_source", "private_bathroom",
+                               "bathroom_sewerage", "bathroom_septic_tank", "bathroom_cesspit", "bathroom_ditch", "bathroom_waterbodies", "bathroom_other",
+                               "V002_h02", sep = ";", convert = TRUE))
 
 data <- data |>
-  select(-id)
+  select(-id, -V002_h02)
 
 # Modify sector_situation and sector_type variables
 data_adjusted_1 <- data |>
