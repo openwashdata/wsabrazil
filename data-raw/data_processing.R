@@ -26,7 +26,7 @@ data <- data_in |>
                                "sector_situation", "MR_name", "sector_type", "avg_income",
                                "total_households", "piped_water", "well_spring_water","stored_rainwater", "other_water_source", "private_bathroom",
                                "bathroom_sewerage", "bathroom_septic_tank", "bathroom_cesspit", "bathroom_ditch", "bathroom_waterbodies", "bathroom_other",
-                               "V002_h02", sep = ";", convert = TRUE))
+                               "V002_h02"), sep = ";", convert = TRUE)
 
 data <- data |>
   select(-id, -V002_h02)
