@@ -1,5 +1,5 @@
 Package: wsabrazil
-Title: Waste management and household infrastructure in Brazil- Demographic Census 2010
+Title: Waste management and household infrastructure in Brazil - Demographic Census 2010
 Version: 0.0.0.9000
 Authors@R: c(
     person("Margaux", "Götschmann", , "margauxg@ethz.ch", role = c("aut", "cre"),
@@ -18,3 +18,4 @@ Depends:
     R (>= 2.10)
 LazyData: true
 Language: en-GB
+Date: 2024-03-28
