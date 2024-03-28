@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![License: CC BY
-4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+4.0](https://img.shields.io/badge/License-CC_BY_4.0-orange.svg)](https://creativecommons.org/licenses/by/4.0/)
 <!-- badges: end -->
 
 This package contains information related to waste management practices
@@ -18,6 +18,8 @@ provides insights into waste disposal habits, water supply sources,
 bathroom facilities, and sanitation infrastructure in Brazilian
 households, contributing to understanding environmental sustainability
 and infrastructure development efforts.
+
+![](man/figures/Water_stress_2019_WRI.png)
 
 ## Installation
 
@@ -135,7 +137,8 @@ sector_type
 character
 </td>
 <td style="text-align:left;">
-living conditions: 1 stands for poor housing conditions
+living conditions: 1 stands for correct housing conditions, 0 stands for
+poor housing conditions
 </td>
 </tr>
 <tr>

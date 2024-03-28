@@ -31,7 +31,7 @@ data_adjusted_1 <- data |>
     sector_situation %in% c(1, 2, 3) ~ "urban", sector_situation %in% c(4, 5, 6) ~ "rural"
   )) |>
   mutate(sector_type = case_when(
-    sector_type == "slum" ~ 1, sector_type == "not_slum" ~ 0
+    sector_type == "slum" ~ 0, sector_type == "not_slum" ~ 1
   ))
 
 wsabrazil <- data_adjusted_1
