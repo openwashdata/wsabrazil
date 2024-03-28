@@ -8,16 +8,10 @@ library(janitor)
 library(dplyr)
 
 # Read data -------------------------------------------------------------
-data_in <- read_csv("data-raw/PA_census_data_processed.csv") |>
+data_in <- read_csv("data-raw/PA_census_data.csv") |>
   as_tibble()
-codebook <- read_csv("data-raw/dictionary_project.csv") |>
-  clean_names()
 
 # Tidy data ---------------------------------------------------------------
-variable_names <- codebook |>
-  select(variable_name)
-variable_description <- codebook |>
-  select(description)
 colnames(data_in)[1] <- "col"
 
 # Split column
