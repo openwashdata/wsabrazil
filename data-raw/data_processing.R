@@ -36,6 +36,11 @@ data_adjusted_1 <- data |>
 
 wsabrazil <- data_adjusted_1
 
+wsabrazil <- wsabrazil |>
+  mutate(avg_income = str_replace_all(avg_income, ",", ".")) |>
+  mutate(avg_income = as.integer(avg_income)) |>
+  mutate(sector_type = as.integer(sector_type))
+
 # Write data -------------------------------------------------------------
 usethis::use_data(wsabrazil, overwrite = TRUE)
 fs::dir_create(here::here("inst", "extdata"))

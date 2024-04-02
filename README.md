@@ -10,17 +10,21 @@
 <!-- badges: end -->
 
 This package contains information related to wastewater management
-practices and household infrastructure across various regions in Brazil.
-It includes variables such as sector codes, metropolitan region names,
-municipality codes, and names, as well as data on the location type,
-living conditions, average income, and household amenities. The data
-provides insights into wastewater disposal habits, water supply sources,
-bathroom facilities, and sanitation infrastructure in Brazilian
-households, contributing to understanding environmental sustainability
-and infrastructure development efforts. (Demographic Census 2010 -
-@atlas)
+practices and household infrastructure from the year 2010 and across
+various regions in Brazil. It includes variables such as sector codes,
+metropolitan region names, municipality codes, and names, as well as
+data on the location type, living conditions, average income, and
+household amenities. The data provides insights into wastewater disposal
+habits, water supply sources, bathroom facilities, and sanitation
+infrastructure in Brazilian households, contributing to understanding
+environmental sustainability and infrastructure development efforts.
+“Atlas of the 2010 Demographic Census - PGI” (n.d.)
 
-![]()
+![](man/figures/housingconditionsnotitle.png) Based on the data, it
+appears for example that one of the municipalities exhibits poorer
+housing conditions compared to others. In this dataset, housing
+conditions are represented numerically, with ‘1’ indicating correct
+housing conditions and ‘0’ indicating poor housing conditions.
 
 ## Installation
 
@@ -45,7 +49,8 @@ The dataset includes observations of wastewater management practices and
 household infrastructure (access to water and sanitation services)
 across various regions in Brazil.
 
-The package provides access to one single dataset.
+The data was collected in 2010 and the package provides access to one
+single dataset.
 
 ``` r
 library(wsabrazil)
@@ -124,7 +129,7 @@ municipality name
 sector_situation
 </td>
 <td style="text-align:left;">
-integer
+character
 </td>
 <td style="text-align:left;">
 location type: urban or rural
@@ -135,7 +140,7 @@ location type: urban or rural
 sector_type
 </td>
 <td style="text-align:left;">
-character
+integer
 </td>
 <td style="text-align:left;">
 living conditions: 1 stands for correct housing conditions, 0 stands for
@@ -147,7 +152,7 @@ poor housing conditions
 avg_income
 </td>
 <td style="text-align:left;">
-character
+integer
 </td>
 <td style="text-align:left;">
 average nominal monthly income of permanent private households
@@ -301,8 +306,6 @@ wastewater discharged into other outlet
 
 ## Example
 
-## References
-
 ## License
 
 Data are available as
@@ -329,3 +332,16 @@ citation("wsabrazil")
 #>     version = {0.0.0.9000},
 #>   }
 ```
+
+## References
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+
+<div id="ref-atlas" class="csl-entry">
+
+“Atlas of the 2010 Demographic Census - PGI.” n.d.
+https://censo2010.ibge.gov.br/apps/atlas/#/home/.
+
+</div>
+
+</div>

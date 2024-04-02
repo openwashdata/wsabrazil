@@ -3,9 +3,9 @@ data,wsabrazil.rda,sector_code       ,double,sector code
 data,wsabrazil.rda,MR_name           ,character,metropolitan region name
 data,wsabrazil.rda,municipality_code ,integer,municipality code
 data,wsabrazil.rda,municipality_name ,character,municipality name
-data,wsabrazil.rda,sector_situation  ,integer,location type: urban or rural
-data,wsabrazil.rda,sector_type       ,character,living conditions: 1 stands for correct housing conditions, 0 stands for poor housing conditions
-data,wsabrazil.rda,avg_income          ,character,average nominal monthly income of permanent private households
+data,wsabrazil.rda,sector_situation  ,character,location type: urban or rural
+data,wsabrazil.rda,sector_type       ,integer,living conditions: 1 stands for correct housing conditions, 0 stands for poor housing conditions
+data,wsabrazil.rda,avg_income          ,integer,average nominal monthly income of permanent private households
 data,wsabrazil.rda,total_households          ,integer,number of permanent private households
 data,wsabrazil.rda,piped_water          ,integer,number of permanent private households with water supply by piped network
 data,wsabrazil.rda,well_spring_water          ,integer,number of permanent private households with water supply by property's well or spring

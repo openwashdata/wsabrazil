@@ -5,7 +5,7 @@ editor_options:
   markdown: 
     wrap: 72
   chunk_output_type: console
-#bibliography: references.bib
+bibliography: references.bib
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -27,9 +27,10 @@ library(tidyverse)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-brown.svg)](https://creativecommons.org/licenses/by/4.0/)
 <!-- badges: end -->
 
-This package contains information related to wastewater management practices and household infrastructure across various regions in Brazil. It includes variables such as sector codes, metropolitan region names, municipality codes, and names, as well as data on the location type, living conditions, average income, and household amenities. The data provides insights into wastewater disposal habits, water supply sources, bathroom facilities, and sanitation infrastructure in Brazilian households, contributing to understanding environmental sustainability and infrastructure development efforts. (Demographic Census 2010 - @atlas)
+This package contains information related to wastewater management practices and household infrastructure from the year 2010 and across various regions in Brazil. It includes variables such as sector codes, metropolitan region names, municipality codes, and names, as well as data on the location type, living conditions, average income, and household amenities. The data provides insights into wastewater disposal habits, water supply sources, bathroom facilities, and sanitation infrastructure in Brazilian households, contributing to understanding environmental sustainability and infrastructure development efforts. @atlas
 
-![]()
+![](man/figures/housingconditionsnotitle.png)
+Based on the data, it appears for example that one of the municipalities exhibits poorer housing conditions compared to others. In this dataset, housing conditions are represented numerically, with '1' indicating correct housing conditions and '0' indicating poor housing conditions.
 
 ## Installation
 
@@ -62,8 +63,8 @@ read_csv("data-raw/dictionary.csv") |>
 ## Data
 
 The dataset includes observations of wastewater management practices and household infrastructure (access to water and sanitation services) across various regions in Brazil.
-
-The package provides access to one single dataset.
+  
+The data was collected in 2010 and the package provides access to one single dataset.
 
 ```{r, echo = TRUE}
 library(wsabrazil)
@@ -88,10 +89,22 @@ readr::read_csv("data-raw/dictionary.csv") |>
 
 ## Example
 
-## References
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+library(wsabrazil)
+library(ggplot2)
+library(sf)
+library(dplyr)
+library(cowplot)
 
-```{html, echo = FALSE}
-<div id="refs"></div>
+shapefile <- st_read("man/PA.min.json")
+merged_data <- merge(shapefile, wsabrazil, by.x = "GEOCODIGO", by.y = "municipality_code")
+
+# Plot the choropleth map
+ggplot() +
+  geom_sf(data = merged_data, aes(fill = sector_type)) +
+  scale_fill_gradient(name = "", low = "brown", high = "beige") +
+  labs(caption = "sector_type", title = "Housing Conditions Across Municipalities") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"))
 ```
 
 ## License
@@ -106,3 +119,10 @@ To cite this package, please use:
 ```{r}
 citation("wsabrazil")
 ```
+
+## References
+
+```{html, echo = FALSE}
+<div id="refs"></div>
+```
+
