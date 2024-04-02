@@ -2,17 +2,17 @@
 # CITATION file created with {cffr} R package, v1.0.0
 # See also: https://docs.ropensci.org/cffr/
 # -----------------------------------------------------------
-
+ 
 cff-version: 1.2.0
 message: 'To cite package "wsabrazil" in publications use:'
 type: software
 license: CC-BY-4.0
-title: 'wsabrazil: Wastewater management and household infrastructure in Brazil - Demographic
-  Census 2010'
+title: 'wsabrazil: Wastewater management and household infrastructure in Brazil -
+  Demographic Census 2010'
 version: 0.0.0.9000
-abstract: This dataset about wastewater management and household infrastructure from various
-  Brazilian regions provides insights into wastewater disposal habits, water sources, bathroom
-  facilities, and sanitation infrastructure.
+abstract: This dataset about wastewater management and household infrastructure from
+  various Brazilian regions provides insights into wastewater disposal habits, water
+  sources, bathroom facilities, and sanitation infrastructure.
 authors:
 - family-names: Götschmann
   given-names: Margaux
@@ -22,7 +22,7 @@ authors:
   given-names: Lais
   email: laismoreira@gmail.com
   orcid: https://orcid.org/0000-0003-2898-7014
-date-released: '2024-03-28'
+date-released: '2024-04-02'
 contact:
 - family-names: Götschmann
   given-names: Margaux
