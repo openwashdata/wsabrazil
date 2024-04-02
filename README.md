@@ -7,24 +7,26 @@
 
 [![License: CC BY
 4.0](https://img.shields.io/badge/License-CC_BY_4.0-brown.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![R-CMD-check](https://github.com/openwashdata/wsabrazil/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/openwashdata/wsabrazil/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 This package contains information related to wastewater management
-practices and household infrastructure from the year 2010 and across
-various regions in Brazil. It includes variables such as sector codes,
-metropolitan region names, municipality codes, and names, as well as
-data on the location type, living conditions, average income, and
-household amenities. The data provides insights into wastewater disposal
-habits, water supply sources, bathroom facilities, and sanitation
-infrastructure in Brazilian households, contributing to understanding
-environmental sustainability and infrastructure development efforts.
-“Atlas of the 2010 Demographic Census - PGI” (n.d.)
+practices and household infrastructure in the Metropolitan Region of
+Belém, Brazil. It includes variables such as sector codes, metropolitan
+region names, municipality codes, and names, as well as data on the
+location type, living conditions, average income, and household
+amenities. The data provides insights into wastewater disposal habits,
+water supply sources, bathroom facilities, and sanitation infrastructure
+in Brazilian households, contributing to understanding environmental
+sustainability and infrastructure development efforts. “Atlas of the
+2010 Demographic Census - PGI” (n.d.)
 
 ![](man/figures/housingconditionsnotitle.png) Based on the data, it
-appears for example that one of the municipalities exhibits poorer
+appears for example that the municipality of Marituba exhibits poorer
 housing conditions compared to others. In this dataset, housing
 conditions are represented numerically, with ‘1’ indicating correct
-housing conditions and ‘0’ indicating poor housing conditions.
+housing conditions and ‘0’ indicating poor housing conditions. The
+location map displays the Metropolitan Region of Belém.
 
 ## Installation
 
@@ -306,6 +308,37 @@ wastewater discharged into other outlet
 
 ## Example
 
+From the dataset, we can explore the distribution of water sources in
+the Metropolitan Region of Belém. We create here a horizontal bar plot
+to visualize the frequency of different water sources available,
+utilizing variables such as piped water or stored rainwater. We observe
+from the resulting plot (see Figure below) that the majority of private
+households are supplied by piped water. Interestingly, none of the
+households store rainwater. This is possibly due to factors such as
+local climate patterns and infrastructure limitations.
+
+``` r
+library(dplyr)
+library(ggplot2)
+library(wsabrazil)
+
+# Reshape the data into long format
+data_long <- wsabrazil |> 
+  tidyr::pivot_longer(cols = piped_water:other_water_source, 
+                      names_to = "water_source", 
+                      values_to = "frequency")
+  
+# Create a horizontal bar plot of water source types
+ggplot(data_long, aes(x = frequency, y = reorder(water_source, frequency))) +
+  geom_bar(stat = "identity", fill = "#3399FF") +
+  labs(x = "Frequency", y = "Water Source", 
+       title = "Water Supply in Belém", 
+       caption = "") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold", color = "#333333"))
+```
+
+![](man/figures/water_supply.png)
+
 ## License
 
 Data are available as
@@ -319,16 +352,16 @@ To cite this package, please use:
 citation("wsabrazil")
 #> To cite package 'wsabrazil' in publications use:
 #> 
-#>   Götschmann M, Santos L (2024). "wsabrazil: Waste management and
+#>   Götschmann M, Santos L (2024). "wsabrazil: Wastewater management and
 #>   household infrastructure in Brazil - Demographic Census 2010."
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
 #>   @Misc{gotschmann_etall:2024,
-#>     title = {wsabrazil: Waste management and household infrastructure in Brazil - Demographic Census 2010},
+#>     title = {wsabrazil: Wastewater management and household infrastructure in Brazil - Demographic Census 2010},
 #>     author = {Margaux Götschmann and Lais Santos},
 #>     year = {2024},
-#>     abstract = {This dataset about waste management and household infrastructure from various Brazilian regions provides insights into waste disposal habits, water sources, bathroom facilities, and sanitation infrastructure.},
+#>     abstract = {This dataset about wastewater management and household infrastructure from various Brazilian regions provides insights into wastewater disposal habits, water sources, bathroom facilities, and sanitation infrastructure.},
 #>     version = {0.0.0.9000},
 #>   }
 ```
