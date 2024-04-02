@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![License: CC BY
-4.0](https://img.shields.io/badge/License-CC_BY_4.0-orange.svg)](https://creativecommons.org/licenses/by/4.0/)
+4.0](https://img.shields.io/badge/License-CC_BY_4.0-brown.svg)](https://creativecommons.org/licenses/by/4.0/)
 <!-- badges: end -->
 
 This package contains information related to wastewater management
@@ -17,9 +17,10 @@ living conditions, average income, and household amenities. The data
 provides insights into wastewater disposal habits, water supply sources,
 bathroom facilities, and sanitation infrastructure in Brazilian
 households, contributing to understanding environmental sustainability
-and infrastructure development efforts.
+and infrastructure development efforts. (Demographic Census 2010 -
+@atlas)
 
-![](man/figures/avg.webp)
+![]()
 
 ## Installation
 
@@ -300,7 +301,12 @@ wastewater discharged into other outlet
 
 ## Example
 
+## References
+
 ## License
+
+Data are available as
+[CC-BY](https://github.com/openwashdata/wsabrazil/LICENSE.md).
 
 ## Citation
 
@@ -308,19 +314,18 @@ To cite this package, please use:
 
 ``` r
 citation("wsabrazil")
-#> Warning in citation("wsabrazil"): could not determine year for 'wsabrazil' from
-#> package DESCRIPTION file
 #> To cite package 'wsabrazil' in publications use:
 #> 
-#>   Götschmann M, Santos L (????). _wsabrazil: Waste management and
-#>   household infrastructure in Brazil- Demographic Census 2010_. R
-#>   package version 0.0.0.9000.
+#>   Götschmann M, Santos L (2024). "wsabrazil: Waste management and
+#>   household infrastructure in Brazil - Demographic Census 2010."
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
-#>   @Manual{,
-#>     title = {wsabrazil: Waste management and household infrastructure in Brazil- Demographic Census 2010},
+#>   @Misc{gotschmann_etall:2024,
+#>     title = {wsabrazil: Waste management and household infrastructure in Brazil - Demographic Census 2010},
 #>     author = {Margaux Götschmann and Lais Santos},
-#>     note = {R package version 0.0.0.9000},
+#>     year = {2024},
+#>     abstract = {This dataset about waste management and household infrastructure from various Brazilian regions provides insights into waste disposal habits, water sources, bathroom facilities, and sanitation infrastructure.},
+#>     version = {0.0.0.9000},
 #>   }
 ```
