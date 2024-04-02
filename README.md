@@ -9,17 +9,17 @@
 4.0](https://img.shields.io/badge/License-CC_BY_4.0-orange.svg)](https://creativecommons.org/licenses/by/4.0/)
 <!-- badges: end -->
 
-This package contains information related to waste management practices
-and household infrastructure across various regions in Brazil. It
-includes variables such as sector codes, metropolitan region names,
+This package contains information related to wastewater management
+practices and household infrastructure across various regions in Brazil.
+It includes variables such as sector codes, metropolitan region names,
 municipality codes, and names, as well as data on the location type,
 living conditions, average income, and household amenities. The data
-provides insights into waste disposal habits, water supply sources,
+provides insights into wastewater disposal habits, water supply sources,
 bathroom facilities, and sanitation infrastructure in Brazilian
 households, contributing to understanding environmental sustainability
 and infrastructure development efforts.
 
-![](man/figures/Water_stress_2019_WRI.png)
+![](man/figures/avg.webp)
 
 ## Installation
 
@@ -40,7 +40,7 @@ the table below.
 
 ## Data
 
-The dataset includes observations of waste management practices and
+The dataset includes observations of wastewater management practices and
 household infrastructure (access to water and sanitation services)
 across various regions in Brazil.
 

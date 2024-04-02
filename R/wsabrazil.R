@@ -1,3 +1,10 @@
+#' Wastewater management and household infrastructure in Brazil - Demographic Census 2010
+#'
+#' This dataset about wastewater management and household infrastructure
+#' from various Brazilian regions provides insights into wastewater disposal habits,
+#' water sources, bathroom facilities, and sanitation infrastructure.
+#'
+#' @format A tibble with 1965 rows and 19 variables
 #' \describe{
 #'   \item{sector_code       }{sector code}
 #'   \item{MR_name           }{metropolitan region name}
@@ -19,3 +26,4 @@
 #'   \item{bathroom_waterbodies          }{number of permanent private households with private bathroom or toilet & wastewater discharged into water bodies (river, lake or sea)}
 #'   \item{bathroom_other}{number of permanent private households with private bathroom or toilet & wastewater discharged into other outlet}
 #' }
+"wsabrazil"

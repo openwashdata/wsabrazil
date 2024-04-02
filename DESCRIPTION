@@ -1,5 +1,5 @@
 Package: wsabrazil
-Title: Waste management and household infrastructure in Brazil - Demographic Census 2010
+Title: Wastewater management and household infrastructure in Brazil - Demographic Census 2010
 Version: 0.0.0.9000
 Authors@R: c(
     person("Margaux", "Götschmann", , "margauxg@ethz.ch", role = c("aut", "cre"),
@@ -7,8 +7,8 @@ Authors@R: c(
     person("Lais", "Santos", , "laismoreira@gmail.com", role = "aut",
            comment = c(ORCID = "0000-0003-2898-7014"))
     )
-Description: This dataset about waste management and household infrastructure 
-  from various Brazilian regions provides insights into waste disposal habits, 
+Description: This dataset about wastewater management and household infrastructure 
+  from various Brazilian regions provides insights into wastewater disposal habits, 
   water sources, bathroom facilities, and sanitation infrastructure.
 License: CC BY 4.0
 Encoding: UTF-8
