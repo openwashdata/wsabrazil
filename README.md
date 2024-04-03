@@ -329,12 +329,14 @@ data_long <- wsabrazil |>
                       values_to = "frequency")
   
 # Create a horizontal bar plot of water source types
-ggplot(data_long, aes(x = frequency, y = reorder(water_source, frequency))) +
-  geom_bar(stat = "identity", fill = "#3399FF") +
+plot <- ggplot(data_long, aes(x = frequency, y = reorder(water_source, frequency))) +
+  geom_col(fill = "#3399FF") +
   labs(x = "Frequency", y = "Water Source", 
        title = "Water Supply in Belém", 
        caption = "") +
   theme(plot.title = element_text(hjust = 0.5, face = "bold", color = "#333333"))
+
+plot + scale_x_continuous(labels = scales::number_format())
 ```
 
 ![](man/figures/water_supply.png)

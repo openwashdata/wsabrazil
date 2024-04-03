@@ -8,22 +8,18 @@ library(janitor)
 library(dplyr)
 
 # Read data -------------------------------------------------------------
-data_in <- read_csv("data-raw/PA_census_data.csv") |>
+data_in <- read_csv2("data-raw/PA_census_data.csv") |>
   as_tibble()
 
 # Tidy data ---------------------------------------------------------------
-colnames(data_in)[1] <- "col"
-
-# Split column
 data <- data_in |>
-  separate(col = col, into = c("id", "sector_code", "municipality_name", "municipality_code",
-                               "sector_situation", "MR_name", "sector_type", "avg_income",
-                               "total_households", "piped_water", "well_spring_water","stored_rainwater", "other_water_source", "private_bathroom",
-                               "bathroom_sewerage", "bathroom_septic_tank", "bathroom_cesspit", "bathroom_ditch", "bathroom_waterbodies", "bathroom_other",
-                               "V002_h02"), sep = ";", convert = TRUE)
+  select(-...1, -V002_h02)
 
-data <- data |>
-  select(-id, -V002_h02)
+# Change column names
+colnames(data) <- c("sector_code", "municipality_name", "municipality_code",
+                    "sector_situation", "MR_name", "sector_type", "avg_income",
+                    "total_households", "piped_water", "well_spring_water","stored_rainwater", "other_water_source", "private_bathroom",
+                    "bathroom_sewerage", "bathroom_septic_tank", "bathroom_cesspit", "bathroom_ditch", "bathroom_waterbodies", "bathroom_other")
 
 # Modify sector_situation and sector_type variables
 data_adjusted_1 <- data |>
