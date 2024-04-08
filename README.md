@@ -21,12 +21,12 @@ in Brazilian households, contributing to understanding environmental
 sustainability and infrastructure development efforts. “Atlas of the
 2010 Demographic Census - PGI” (n.d.)
 
-![](man/figures/housingconditionsnotitle.png) Based on the data, it
-appears for example that the municipality of Marituba exhibits poorer
-housing conditions compared to others. In this dataset, housing
-conditions are represented numerically, with ‘1’ indicating correct
-housing conditions and ‘0’ indicating poor housing conditions. The
-location map displays the Metropolitan Region of Belém.
+![](man/figures/housingc.png) Based on the data, it appears for example
+that the municipality of Marituba exhibits poorer housing conditions
+compared to others. In this dataset, housing conditions are represented
+numerically, with ‘1’ indicating correct housing conditions and ‘0’
+indicating poor housing conditions. The location map displays the
+Metropolitan Region of Belém.
 
 ## Installation
 
@@ -331,7 +331,7 @@ data_long <- wsabrazil |>
 # Create a horizontal bar plot of water source types
 plot <- ggplot(data_long, aes(x = frequency, y = reorder(water_source, frequency))) +
   geom_col(fill = "#3399FF") +
-  labs(x = "Frequency", y = "Water Source", 
+  # labs(x = "Frequency", y = "Water Source", 
        title = "Water Supply in Belém", 
        caption = "") +
   theme(plot.title = element_text(hjust = 0.5, face = "bold", color = "#333333"))
