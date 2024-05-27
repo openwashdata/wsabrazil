@@ -1,20 +1,3 @@
-directory,file_name,variable_name,variable_type,description
-data,wsabrazil.rda,sector_code       ,double,sector code
-data,wsabrazil.rda,MR_name           ,character,metropolitan region name
-data,wsabrazil.rda,municipality_code ,integer,municipality code
-data,wsabrazil.rda,municipality_name ,character,municipality name
-data,wsabrazil.rda,sector_situation  ,character,location type: urban or rural
-data,wsabrazil.rda,sector_type       ,integer,living conditions: 1 stands for correct housing conditions, 0 stands for poor housing conditions
-data,wsabrazil.rda,avg_income          ,integer,average nominal monthly income of permanent private households
-data,wsabrazil.rda,total_households          ,integer,number of permanent private households
-data,wsabrazil.rda,piped_water          ,integer,number of permanent private households with water supply by piped network
-data,wsabrazil.rda,well_spring_water          ,integer,number of permanent private households with water supply by property's well or spring
-data,wsabrazil.rda,stored_rainwater          ,integer,number of permanent private households with water supply by stored rainwater
-data,wsabrazil.rda,other_water_source          ,integer,number of permanent private households with water supply by other source
-data,wsabrazil.rda,private_bathroom          ,integer,number of permanent private households with private bathroom or toilet
-data,wsabrazil.rda,bathroom_sewerage          ,integer,number of permanent private households with private bathroom or toilet & sanitation via sewerage or drainage network
-data,wsabrazil.rda,bathroom_septic_tank          ,integer,number of permanent private households with private bathroom or toilet & sanitation via septic tank
-data,wsabrazil.rda,bathroom_cesspit          ,integer,number of permanent private households with private bathroom or toilet & sanitation via cesspit
-data,wsabrazil.rda,bathroom_ditch          ,integer,number of permanent private households with private bathroom or toilet & wastewater discharged into ditch
-data,wsabrazil.rda,bathroom_waterbodies          ,integer,"number of permanent private households with private bathroom or toilet & wastewater discharged into water bodies (river, lake or sea)"
-data,wsabrazil.rda,bathroom_other,integer,number of permanent private households with private bathroom or toilet & wastewater discharged into other outlet
+version https://git-lfs.github.com/spec/v1
+oid sha256:8847e926795741d7aba2bddfb54be9dfac86f21bd8ce2fd73c4b6fa179717cbe
+size 2381
