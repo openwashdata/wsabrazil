@@ -6,27 +6,24 @@
 <!-- badges: start -->
 
 [![License: CC BY
-4.0](https://img.shields.io/badge/License-CC_BY_4.0-brown.svg)](https://creativecommons.org/licenses/by/4.0/)
+4.0](https://img.shields.io/badge/License-CC_BY_4.0-darkorange.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![R-CMD-check](https://github.com/openwashdata/wsabrazil/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/openwashdata/wsabrazil/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 This package contains information related to wastewater management
-practices and household infrastructure in the Metropolitan Region of
-Belém, Brazil. It includes variables such as sector codes, metropolitan
-region names, municipality codes, and names, as well as data on the
-location type, living conditions, average income, and household
-amenities. The data provides insights into wastewater disposal habits,
-water supply sources, bathroom facilities, and sanitation infrastructure
-in Brazilian households, contributing to understanding environmental
-sustainability and infrastructure development efforts. “Atlas of the
-2010 Demographic Census - PGI” (n.d.)
-
-![](man/figures/housingc.png) Based on the data, it appears for example
-that the municipality of Marituba exhibits poorer housing conditions
-compared to others. In this dataset, housing conditions are represented
-numerically, with ‘1’ indicating correct housing conditions and ‘0’
-indicating poor housing conditions. The location map displays the
-Metropolitan Region of Belém.
+practices and household infrastructure in Brazil. It includes variables
+such as sector codes, metropolitan region names, municipality codes, and
+names, as well as data on the location type, living conditions, average
+income, and household amenities. The data provides insights into
+wastewater disposal habits, water supply sources, bathroom facilities,
+and sanitation infrastructure in Brazilian households, contributing to
+understanding environmental sustainability and infrastructure
+development efforts. “Atlas of the 2010 Demographic Census - PGI” (n.d.)
+![](man/figures/Rplot04.png) Based on the data, it appears for example
+that most of the municipalities exhibits poor housing conditions. In
+this dataset, housing conditions are represented numerically, with ‘1’
+indicating correct housing conditions and ‘0’ indicating poor housing
+conditions. The location map displays all Brazilian municipalities.
 
 ## Installation
 
@@ -51,14 +48,13 @@ The dataset includes observations of wastewater management practices and
 household infrastructure (access to water and sanitation services)
 across various regions in Brazil.
 
-The data was collected in 2010 and the package provides access to one
-single dataset.
+The package provides access to one single dataset.
 
 ``` r
 library(wsabrazil)
 ```
 
-The `wsabrazil` dataset has 19 variables and 1965 observations. For an
+The `wsabrazil` dataset has 33 variables and 192896 observations. For an
 overview of the variable names, see the following table.
 
 ``` r
@@ -90,7 +86,95 @@ sector_code
 double
 </td>
 <td style="text-align:left;">
-sector code
+Sector code
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+great_region_name
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Name of the great region
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FU_code
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+Federation unit code
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FU_name
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Federation unit name
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+meso_code
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+Mesoregion code
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+meso_name
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Mesoregion name
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+micro_code
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+Microregion code
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+micro_name
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Microregion name
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MR_code
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+Metropolitan region code
 </td>
 </tr>
 <tr>
@@ -101,7 +185,7 @@ MR_name
 character
 </td>
 <td style="text-align:left;">
-metropolitan region name
+Metropolitan region name
 </td>
 </tr>
 <tr>
@@ -112,7 +196,7 @@ municipality_code
 integer
 </td>
 <td style="text-align:left;">
-municipality code
+Municipality code
 </td>
 </tr>
 <tr>
@@ -123,7 +207,73 @@ municipality_name
 character
 </td>
 <td style="text-align:left;">
-municipality name
+Municipality name
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+district_code
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+District code
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+district_name
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+District name
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+subdistrict_code
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+Subdistrict code
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+subdistrict_name
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Subdistrict name
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+neighb_code
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+Neighborhood code
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+neighb_name
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Neighborhood name
 </td>
 </tr>
 <tr>
@@ -134,7 +284,7 @@ sector_situation
 character
 </td>
 <td style="text-align:left;">
-location type: urban or rural
+Location type: urban or rural
 </td>
 </tr>
 <tr>
@@ -145,7 +295,7 @@ sector_type
 integer
 </td>
 <td style="text-align:left;">
-living conditions: 1 stands for correct housing conditions, 0 stands for
+Living conditions: 1 stands for correct housing conditions, 0 stands for
 poor housing conditions
 </td>
 </tr>
@@ -157,7 +307,7 @@ avg_income
 integer
 </td>
 <td style="text-align:left;">
-average nominal monthly income of permanent private households
+Average nominal monthly income of permanent private households
 </td>
 </tr>
 <tr>
@@ -168,7 +318,7 @@ total_households
 integer
 </td>
 <td style="text-align:left;">
-number of permanent private households
+Number of permanent private households
 </td>
 </tr>
 <tr>
@@ -179,7 +329,7 @@ piped_water
 integer
 </td>
 <td style="text-align:left;">
-number of permanent private households with water supply by piped
+Number of permanent private households with water supply by piped
 network
 </td>
 </tr>
@@ -191,7 +341,7 @@ well_spring_water
 integer
 </td>
 <td style="text-align:left;">
-number of permanent private households with water supply by property’s
+Number of permanent private households with water supply by property’s
 well or spring
 </td>
 </tr>
@@ -203,7 +353,7 @@ stored_rainwater
 integer
 </td>
 <td style="text-align:left;">
-number of permanent private households with water supply by stored
+Number of permanent private households with water supply by stored
 rainwater
 </td>
 </tr>
@@ -215,7 +365,7 @@ other_water_source
 integer
 </td>
 <td style="text-align:left;">
-number of permanent private households with water supply by other source
+Number of permanent private households with water supply by other source
 </td>
 </tr>
 <tr>
@@ -226,7 +376,7 @@ private_bathroom
 integer
 </td>
 <td style="text-align:left;">
-number of permanent private households with private bathroom or toilet
+Number of permanent private households with private bathroom or toilet
 </td>
 </tr>
 <tr>
@@ -237,7 +387,7 @@ bathroom_sewerage
 integer
 </td>
 <td style="text-align:left;">
-number of permanent private households with private bathroom or toilet &
+Number of permanent private households with private bathroom or toilet &
 sanitation via sewerage or drainage network
 </td>
 </tr>
@@ -249,7 +399,7 @@ bathroom_septic_tank
 integer
 </td>
 <td style="text-align:left;">
-number of permanent private households with private bathroom or toilet &
+Number of permanent private households with private bathroom or toilet &
 sanitation via septic tank
 </td>
 </tr>
@@ -261,7 +411,7 @@ bathroom_cesspit
 integer
 </td>
 <td style="text-align:left;">
-number of permanent private households with private bathroom or toilet &
+Number of permanent private households with private bathroom or toilet &
 sanitation via cesspit
 </td>
 </tr>
@@ -273,7 +423,7 @@ bathroom_ditch
 integer
 </td>
 <td style="text-align:left;">
-number of permanent private households with private bathroom or toilet &
+Number of permanent private households with private bathroom or toilet &
 wastewater discharged into ditch
 </td>
 </tr>
@@ -285,7 +435,7 @@ bathroom_waterbodies
 integer
 </td>
 <td style="text-align:left;">
-number of permanent private households with private bathroom or toilet &
+Number of permanent private households with private bathroom or toilet &
 wastewater discharged into water bodies (river, lake or sea)
 </td>
 </tr>
@@ -297,7 +447,7 @@ bathroom_other
 integer
 </td>
 <td style="text-align:left;">
-number of permanent private households with private bathroom or toilet &
+Number of permanent private households with private bathroom or toilet &
 wastewater discharged into other outlet
 </td>
 </tr>
@@ -309,37 +459,40 @@ wastewater discharged into other outlet
 ## Example
 
 From the dataset, we can explore the distribution of water sources in
-the Metropolitan Region of Belém. We create here a horizontal bar plot
-to visualize the frequency of different water sources available,
-utilizing variables such as piped water or stored rainwater. We observe
-from the resulting plot (see Figure below) that the majority of private
-households are supplied by piped water. Interestingly, none of the
-households store rainwater. This is possibly due to factors such as
-local climate patterns and infrastructure limitations.
+the whole country. We create here a horizontal bar plot to visualize the
+frequency of different water sources available, utilizing variables such
+as piped water or stored rainwater. We observe from the resulting plot
+(see Figure below) that the majority of private households are supplied
+by piped water. Interestingly, almost none of the households store
+rainwater. This is possibly due to factors such as local climate
+patterns and infrastructure limitations.
 
 ``` r
 library(dplyr)
 library(ggplot2)
 library(wsabrazil)
+library(tidyr)
 
-# Reshape the data into long format
-data_long <- wsabrazil |> 
-  tidyr::pivot_longer(cols = piped_water:other_water_source, 
+data_long_summary <- wsabrazil |> 
+  pivot_longer(cols = piped_water:other_water_source, 
                       names_to = "water_source", 
-                      values_to = "frequency")
-  
+                      values_to = "frequency") |> 
+  group_by(water_source) |> 
+  summarise(total_frequency = sum(frequency, na.rm = TRUE)) |> 
+  arrange(total_frequency)
+
 # Create a horizontal bar plot of water source types
-plot <- ggplot(data_long, aes(x = frequency, y = reorder(water_source, frequency))) +
-  geom_col(fill = "#3399FF") +
-  # labs(x = "Frequency", y = "Water Source", 
-       title = "Water Supply in Belém", 
+plot <- ggplot(data_long_summary, aes(x = total_frequency, y = reorder(water_source, total_frequency))) +
+  geom_col(fill = "#0072B2") +
+  labs(x = "Frequency", y = "Water Source", 
+       title = "Water supply in Brazil", 
        caption = "") +
   theme(plot.title = element_text(hjust = 0.5, face = "bold", color = "#333333"))
 
 plot + scale_x_continuous(labels = scales::number_format())
 ```
 
-![](man/figures/water_supply.png)
+![](man/figures/Rplot01.png)
 
 ## License
 

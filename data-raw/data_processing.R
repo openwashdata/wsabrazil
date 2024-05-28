@@ -68,7 +68,10 @@ merged_data <- full_join(data_adjusted_1, data_adjusted_2, by = c("sector_code",
 # Modify some variables' types
 wsabrazil <- merged_data |>
   mutate(avg_income = as.integer(avg_income)) |>
-  mutate(sector_type = as.integer(sector_type))
+  mutate(sector_type = as.integer(sector_type), neighb_code = as.integer(neighb_code),
+         subdistrict_code = as.integer(subdistrict_code), district_code = as.integer(district_code),
+         municipality_code = as.integer(municipality_code), MR_code = as.integer(MR_code),
+         micro_code = as.integer(micro_code), meso_code = as.integer(meso_code), FU_code = as.integer(meso_code))
 
 # Remove non-UTF8 entries
 cctu::detect_invalid_utf8(wsabrazil)
