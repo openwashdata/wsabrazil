@@ -2,13 +2,12 @@
 # CITATION file created with {cffr} R package, v1.0.0
 # See also: https://docs.ropensci.org/cffr/
 # -----------------------------------------------------------
- 
+
 cff-version: 1.2.0
 message: 'To cite package "wsabrazil" in publications use:'
 type: software
 license: CC-BY-4.0
-title: 'wsabrazil: Wastewater management and household infrastructure in Brazil -
-  Demographic Census 2010'
+title: 'wsabrazil: Wastewater management and household infrastructure in     Brazil'
 version: 0.0.0.9000
 abstract: This dataset about wastewater management and household infrastructure from
   various Brazilian regions provides insights into wastewater disposal habits, water

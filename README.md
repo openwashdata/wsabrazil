@@ -23,7 +23,8 @@ development efforts. “Atlas of the 2010 Demographic Census - PGI” (n.d.)
 that most of the municipalities exhibits poor housing conditions. In
 this dataset, housing conditions are represented numerically, with ‘1’
 indicating correct housing conditions and ‘0’ indicating poor housing
-conditions. The location map displays all Brazilian municipalities.
+conditions. The location map displays all Brazilian municipalities from
+which data has been collected.
 
 ## Installation
 

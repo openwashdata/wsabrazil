@@ -1,5 +1,5 @@
 Package: wsabrazil
-Title: Wastewater management and household infrastructure in Brazil - Demographic Census 2010
+Title: Wastewater management and household infrastructure in Brazil
 Version: 0.0.0.9000
 Authors@R: c(
     person("Margaux", "Götschmann", , "margauxg@ethz.ch", role = c("aut", "cre"),

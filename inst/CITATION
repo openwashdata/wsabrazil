@@ -1,7 +1,7 @@
 
 bibentry(bibtype = "Misc",
          key = "gotschmann_etall:2024",
-         title = "wsabrazil: Wastewater management and household infrastructure in Brazil - Demographic Census 2010",
+         title = "wsabrazil: Wastewater management and household infrastructure in Brazil",
          author = c(person(given = "Margaux",
                            family = "Götschmann",
                            email = "margauxg@ethz.ch",

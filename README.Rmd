@@ -30,7 +30,7 @@ library(tidyverse)
 
 This package contains information related to wastewater management practices and household infrastructure in Brazil. It includes variables such as sector codes, metropolitan region names, municipality codes, and names, as well as data on the location type, living conditions, average income, and household amenities. The data provides insights into wastewater disposal habits, water supply sources, bathroom facilities, and sanitation infrastructure in Brazilian households, contributing to understanding environmental sustainability and infrastructure development efforts. @atlas
 ![](man/figures/Rplot04.png)
-Based on the data, it appears for example that most of the municipalities exhibits poor housing conditions. In this dataset, housing conditions are represented numerically, with '1' indicating correct housing conditions and '0' indicating poor housing conditions. The location map displays all Brazilian municipalities.
+Based on the data, it appears for example that most of the municipalities exhibits poor housing conditions. In this dataset, housing conditions are represented numerically, with '1' indicating correct housing conditions and '0' indicating poor housing conditions. The location map displays all Brazilian municipalities from which data has been collected.
 
 ## Installation
 
