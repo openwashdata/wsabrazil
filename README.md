@@ -457,15 +457,41 @@ wastewater discharged into other outlet
 
 </div>
 
-## Example
+## Examples
 
-From the dataset, we can explore the distribution of water sources in
-the whole country. We create here a horizontal bar plot to visualize the
-frequency of different water sources available, utilizing variables such
-as piped water or stored rainwater. We observe from the resulting plot
-(see Figure below) that the majority of private households are supplied
-by piped water. Interestingly, almost none of the households store
-rainwater. This is possibly due to factors such as local climate
+### 1. Housing conditions across municipalities
+
+The location map displayed above was created as follows:
+
+``` r
+library(wsabrazil)
+library(ggplot2)
+library(sf)
+library(dplyr)
+
+shapefile <- st_read("man/gadm41_BRA_2.json")
+merged_data <- merge(shapefile, wsabrazil, by.x = "CC_2", by.y = "municipality_code")
+
+# Plot the choropleth map
+ggplot() +
+  geom_sf(data = merged_data, aes(fill = as.factor(sector_type))) +
+  scale_fill_manual(name = "sector_type", values = c("0" = "#E69F00", "1" = "#0072B2"),
+                    labels = c("0" = "poor", "1" = "correct")) +
+  labs(title = "Housing conditions across municipalities") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold", color = "#333333", size = 24),
+        legend.title = element_text(face = "bold", color = "#333333", size = 16),
+        legend.text = element_text(color = "#333333", size = 16))
+```
+
+### 2. Water supply in Brazil
+
+From the dataset, we can also explore the distribution of water sources
+in the whole country. We create here a horizontal bar plot to visualize
+the frequency of different water sources available, utilizing variables
+such as piped water or stored rainwater. We observe from the resulting
+plot (see Figure below) that the majority of private households are
+supplied by piped water. Interestingly, almost none of the households
+store rainwater. This is possibly due to factors such as local climate
 patterns and infrastructure limitations.
 
 ``` r
@@ -509,12 +535,12 @@ citation("wsabrazil")
 #> To cite package 'wsabrazil' in publications use:
 #> 
 #>   Götschmann M, Santos L (2024). "wsabrazil: Wastewater management and
-#>   household infrastructure in Brazil - Demographic Census 2010."
+#>   household infrastructure in Brazil."
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
 #>   @Misc{gotschmann_etall:2024,
-#>     title = {wsabrazil: Wastewater management and household infrastructure in Brazil - Demographic Census 2010},
+#>     title = {wsabrazil: Wastewater management and household infrastructure in Brazil},
 #>     author = {Margaux Götschmann and Lais Santos},
 #>     year = {2024},
 #>     abstract = {This dataset about wastewater management and household infrastructure from various Brazilian regions provides insights into wastewater disposal habits, water sources, bathroom facilities, and sanitation infrastructure.},
