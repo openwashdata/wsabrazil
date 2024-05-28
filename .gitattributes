@@ -1,2 +1,1 @@
-data-raw/all_states_dfs_2010_stacked.csv filter=lfs diff=lfs merge=lfs -text
 *.csv filter=lfs diff=lfs merge=lfs -text
