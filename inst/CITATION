@@ -14,4 +14,4 @@ bibentry(bibtype = "Misc",
          url = "https://github.com/openwashdata/wsabrazil",
          abstract = "This dataset about wastewater management and household infrastructure from various Brazilian regions provides insights into wastewater disposal habits, water sources, bathroom facilities, and sanitation infrastructure.",
          keywords = "open data,washdata,wastewater,sanitation,water supply,census,Brazil,2010,brazil,infrastructure,open-data,r,wash,water",
-         version = "0.0.0.9000")
+         version = "0.1.0")
