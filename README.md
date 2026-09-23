@@ -524,7 +524,7 @@ plot + scale_x_continuous(labels = scales::number_format())
 ## License
 
 Data are available as
-[CC-BY](https://github.com/openwashdata/wsabrazil/LICENSE.md).
+[CC-BY](https://github.com/openwashdata/wsabrazil/blob/main/LICENSE.md).
 
 ## Citation
 
