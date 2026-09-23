@@ -8,3 +8,5 @@
 ^docs$
 ^pkgdown$
 ^CITATION\.cff$
+^package_processing\.R$
+^references\.bib$
