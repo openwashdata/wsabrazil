@@ -2,23 +2,26 @@
 
 ## Authors
 
-- **Margaux Götschmann**. Author, maintainer.
+- **Margaux Götschmann**. Author.
   [](https://orcid.org/0009-0002-2567-3343)
 
 - **Lais Santos**. Author. [](https://orcid.org/0000-0003-2898-7014)
+
+- **Lars Schöbitz**. Maintainer.
+  [](https://orcid.org/0000-0003-2196-5015)
 
 ## Citation
 
 Source:
 [`inst/CITATION`](https://github.com/openwashdata/wsabrazil/blob/main/inst/CITATION)
 
-Götschmann M, Santos L (2026). “wsabrazil: Wastewater management and
-household infrastructure in Brazil.”
+Götschmann M, Santos L, Schöbitz L (2026). “wsabrazil: Wastewater
+management and household infrastructure in Brazil.”
 <https://github.com/openwashdata/wsabrazil>.
 
     @Misc{gotschmann_etall:2026,
       title = {wsabrazil: Wastewater management and household infrastructure in Brazil},
-      author = {Margaux Götschmann and Lais Santos},
+      author = {Margaux Götschmann and Lais Santos and Lars Schöbitz},
       year = {2026},
       url = {https://github.com/openwashdata/wsabrazil},
       abstract = {This dataset about wastewater management and household infrastructure from various Brazilian regions provides insights into wastewater disposal habits, water sources, bathroom facilities, and sanitation infrastructure.},

@@ -171,17 +171,20 @@ To cite this package, please use:
 citation("wsabrazil")
 #> To cite package 'wsabrazil' in publications use:
 #> 
-#>   Götschmann M, Santos L (2024). "wsabrazil: Wastewater management and
-#>   household infrastructure in Brazil."
+#>   Götschmann M, Santos L, Schöbitz L (2026). "wsabrazil: Wastewater
+#>   management and household infrastructure in Brazil."
+#>   <https://github.com/openwashdata/wsabrazil>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
-#>   @Misc{gotschmann_etall:2024,
+#>   @Misc{gotschmann_etall:2026,
 #>     title = {wsabrazil: Wastewater management and household infrastructure in Brazil},
-#>     author = {Margaux Götschmann and Lais Santos},
-#>     year = {2024},
+#>     author = {Margaux Götschmann and Lais Santos and Lars Schöbitz},
+#>     year = {2026},
+#>     url = {https://github.com/openwashdata/wsabrazil},
 #>     abstract = {This dataset about wastewater management and household infrastructure from various Brazilian regions provides insights into wastewater disposal habits, water sources, bathroom facilities, and sanitation infrastructure.},
-#>     version = {0.0.0.9000},
+#>     keywords = {open data,washdata,wastewater,sanitation,water supply,census,Brazil,2010,brazil,infrastructure,open-data,r,wash,water},
+#>     version = {0.1.0},
 #>   }
 ```
 
