@@ -5,7 +5,7 @@
 \alias{wsabrazil}
 \title{Wastewater management and household infrastructure in Brazil - Demographic Census 2010}
 \format{
-A tibble with 192896 rows and 33 variables
+A tibble with 190931 rows and 33 variables
 \describe{
 \item{sector_code       }{sector code}
 \item{MR_name           }{metropolitan region name}
