@@ -55,7 +55,7 @@ The package provides access to one single dataset.
 library(wsabrazil)
 ```
 
-The `wsabrazil` dataset has 33 variables and 192896 observations. For an
+The `wsabrazil` dataset has 33 variables and 190931 observations. For an
 overview of the variable names, see the following table.
 
 ``` r

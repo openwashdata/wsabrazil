@@ -7,12 +7,15 @@ library(janitor)
 library(dplyr)
 
 # Read data -------------------------------------------------------------
-data_in <- read_csv2("data-raw/PA_census_data.csv") |>
-  as_tibble()
+# data-raw/PA_census_data.csv (1965 census sectors of the Belém metropolitan
+# region, state of Pará) is not used. Every one of its sectors is also in the
+# stacked file below with the same household counts and income, so merging it
+# only added duplicate rows without geography codes (issue #4). The file stays
+# in data-raw/ for provenance.
 
 # The stacked file for all states is Latin-1 encoded (place names such as
 # "Rondônia" or "Vale do Juruá"); read it with that encoding so readr converts
-# the text to UTF-8. PA_census_data.csv is already UTF-8.
+# the text to UTF-8.
 data_in_2 <- read_csv2(
   "data-raw/all_states_dfs_2010_stacked.csv",
   locale = locale(decimal_mark = ",", grouping_mark = ".", encoding = "latin1")
@@ -20,9 +23,6 @@ data_in_2 <- read_csv2(
   as_tibble()
 
 # Tidy data ---------------------------------------------------------------
-data <- data_in |>
-  select(-...1, -V002_h02)
-
 data_2 <- data_in_2 |>
   select(sector_code,great_region_name,FU_code,FU_name,
          meso_code,meso_name,micro_code,micro_name,
@@ -34,10 +34,6 @@ data_2 <- data_in_2 |>
          V017_h01,V018_h01,V019_h01,V020_h01,V021_h01,V022_h01)
 
 # Change column names
-colnames(data) <- c("sector_code", "municipality_name", "municipality_code",
-                    "sector_situation", "MR_name", "sector_type", "avg_income",
-                    "total_households", "piped_water", "well_spring_water","stored_rainwater", "other_water_source", "private_bathroom",
-                    "bathroom_sewerage", "bathroom_septic_tank", "bathroom_cesspit", "bathroom_ditch", "bathroom_waterbodies", "bathroom_other")
 colnames(data_2) <- c("sector_code","great_region_name","FU_code","FU_name",
                       "meso_code","meso_name","micro_code","micro_name",
                       "MR_code","MR_name","municipality_code","municipality_name",
@@ -50,24 +46,19 @@ colnames(data_2) <- c("sector_code","great_region_name","FU_code","FU_name",
                       "bathroom_ditch", "bathroom_waterbodies", "bathroom_other")
 
 # Modify sector_situation and sector_type variables
-data_adjusted_1 <- data |>
-  mutate(sector_situation = case_when(
-    sector_situation %in% c(1, 2, 3) ~ "urban", sector_situation %in% c(4, 5, 6) ~ "rural"
-  )) |>
-  mutate(sector_type = case_when(
-    sector_type == "slum" ~ 0, sector_type == "not_slum" ~ 1
-  ))
-
 data_adjusted_2 <- data_2 |>
   mutate(sector_situation = case_when(
     sector_situation %in% c(1, 2, 3) ~ "urban", sector_situation %in% c(4, 5, 6) ~ "rural"
   ))
 
-# Merge the two data sets
-merged_data <- full_join(data_adjusted_1, data_adjusted_2, by = c("sector_code", "municipality_name", "municipality_code",
-                                              "sector_situation", "MR_name", "sector_type", "avg_income",
-                                              "total_households", "piped_water", "well_spring_water","stored_rainwater", "other_water_source", "private_bathroom",
-                                              "bathroom_sewerage", "bathroom_septic_tank", "bathroom_cesspit", "bathroom_ditch", "bathroom_waterbodies", "bathroom_other"))
+# Put the columns in the published order
+merged_data <- data_adjusted_2 |>
+  relocate(sector_code, municipality_name, municipality_code,
+           sector_situation, MR_name, sector_type, avg_income,
+           total_households, piped_water, well_spring_water,
+           stored_rainwater, other_water_source, private_bathroom,
+           bathroom_sewerage, bathroom_septic_tank, bathroom_cesspit,
+           bathroom_ditch, bathroom_waterbodies, bathroom_other)
 
 # Modify some variables' types
 wsabrazil <- merged_data |>
