@@ -13,7 +13,7 @@ wsabrazil
 
 ## Format
 
-A tibble with 1965 rows and 19 variables
+A tibble with 190931 rows and 33 variables
 
 - sector_code :
 

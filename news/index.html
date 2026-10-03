@@ -270,7 +270,7 @@
 
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.1.0" id="wsabrazil-010">wsabrazil 0.1.0<a class="anchor" aria-label="anchor" href="#wsabrazil-010"></a></h2>
-<ul><li>First versioned release, planned for the first Zenodo deposit. CITATION.cff and inst/CITATION declare the work as a dataset; DESCRIPTION gains keywords and the spatial and temporal coverage; the pkgdown site is configured per the openwashdata standard and deployed from gh-pages; R CMD check runs in CI. The data are unchanged; the Latin-1 encoding and the FU_code values are fixed in a data pass before the release.</li>
+<ul><li>First versioned release, planned for the first Zenodo deposit. CITATION.cff and inst/CITATION declare the work as a dataset; DESCRIPTION gains keywords and the spatial and temporal coverage; the pkgdown site is configured per the openwashdata standard and deployed from gh-pages; R CMD check runs in CI. The stacked census file is now read as Latin-1, so all place names are valid UTF-8 (807,454 invalid values before, none after), and <code>FU_code</code> holds the two-digit IBGE state code (11 to 53) taken from <code>meso_code</code>. Both exports are written from the same object. The 1,965 rows that came from <code>data-raw/PA_census_data.csv</code> are dropped: they repeated census sectors of the Belém metropolitan region that are already in the data with the same household counts and income, but had no geography codes. The data now have 190,931 rows, one per census sector; all other values are unchanged (<a href="https://github.com/openwashdata/wsabrazil/issues/4" class="external-link">#4</a>).</li>
 </ul></div>
   </main></div>
 
