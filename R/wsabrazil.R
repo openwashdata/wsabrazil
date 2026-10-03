@@ -4,7 +4,7 @@
 #' from various Brazilian regions provides insights into wastewater disposal habits,
 #' water sources, bathroom facilities, and sanitation infrastructure.
 #'
-#' @format A tibble with 1965 rows and 19 variables
+#' @format A tibble with 190931 rows and 33 variables
 #' \describe{
 #'   \item{sector_code       }{sector code}
 #'   \item{MR_name           }{metropolitan region name}
