@@ -2,17 +2,21 @@
 # R script to process uploaded raw data into a tidy, analysis-ready data frame
 # Load packages -----------------------------------------------------------
 library(tidyverse)
-library(openwashdata)
 library(readxl)
 library(janitor)
 library(dplyr)
-library(cctu)
 
 # Read data -------------------------------------------------------------
 data_in <- read_csv2("data-raw/PA_census_data.csv") |>
   as_tibble()
 
-data_in_2 <- read_csv2("data-raw/all_states_dfs_2010_stacked.csv") |>
+# The stacked file for all states is Latin-1 encoded (place names such as
+# "Rondônia" or "Vale do Juruá"); read it with that encoding so readr converts
+# the text to UTF-8. PA_census_data.csv is already UTF-8.
+data_in_2 <- read_csv2(
+  "data-raw/all_states_dfs_2010_stacked.csv",
+  locale = locale(decimal_mark = ",", grouping_mark = ".", encoding = "latin1")
+) |>
   as_tibble()
 
 # Tidy data ---------------------------------------------------------------
@@ -71,14 +75,23 @@ wsabrazil <- merged_data |>
   mutate(sector_type = as.integer(sector_type), neighb_code = as.integer(neighb_code),
          subdistrict_code = as.integer(subdistrict_code), district_code = as.integer(district_code),
          municipality_code = as.integer(municipality_code), MR_code = as.integer(MR_code),
-         micro_code = as.integer(micro_code), meso_code = as.integer(meso_code), FU_code = as.integer(meso_code))
+         micro_code = as.integer(micro_code), meso_code = as.integer(meso_code))
 
-# Remove non-UTF8 entries
-cctu::detect_invalid_utf8(wsabrazil)
-wsabrazil_utf8 <- cctu::remove_invalid_utf8(wsabrazil)
+# FU_code is the 2-digit IBGE code of the state (federative unit). The raw
+# column holds "ES" instead of 32 for Espirito Santo, so derive the code from
+# the first two digits of the 4-digit mesoregion code, which is the same for
+# every other state.
+wsabrazil <- wsabrazil |>
+  mutate(FU_code = as.integer(meso_code %/% 100))
+
+# Check that all text is valid UTF-8
+stopifnot(all(unlist(lapply(
+  Filter(is.character, wsabrazil),
+  function(x) validUTF8(x[!is.na(x)])
+))))
 
 # Write data -------------------------------------------------------------
-usethis::use_data(wsabrazil, overwrite = TRUE)
+usethis::use_data(wsabrazil, overwrite = TRUE, version = 2)
 fs::dir_create(here::here("inst", "extdata"))
 write_csv(wsabrazil, here::here("inst", "extdata", "wsabrazil.csv"))
-openxlsx::write.xlsx(wsabrazil_utf8, here::here("inst", "extdata", "wsabrazil.xlsx"))
+openxlsx::write.xlsx(wsabrazil, here::here("inst", "extdata", "wsabrazil.xlsx"))
