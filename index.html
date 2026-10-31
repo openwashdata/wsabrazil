@@ -60,7 +60,12 @@
   "publisher": {
     "@type": "Organization",
     "name": "openwashdata",
-    "url": "https://github.com/openwashdata"
+    "url": "https://openwashdata.org"
+  },
+  "includedInDataCatalog": {
+    "@type": "DataCatalog",
+    "name": "openwashdata",
+    "url": "https://openwashdata.org/pages/gallery/data/"
   },
   "spatialCoverage": {
     "@type": "Place",
@@ -275,6 +280,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json">
 </form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://openwashdata.org" aria-label="openwashdata website">openwashdata.org</a></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://github.com/openwashdata/wsabrazil/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
@@ -288,6 +294,7 @@
 </h1></div>
 <!-- badges: start -->
 
+<p>A data package published by <a href="https://openwashdata.org" class="external-link">openwashdata</a>.</p>
 <p>This package contains information related to wastewater management practices and household infrastructure in Brazil. It includes variables such as sector codes, metropolitan region names, municipality codes, and names, as well as data on the location type, living conditions, average income, and household amenities. The data provides insights into wastewater disposal habits, water supply sources, bathroom facilities, and sanitation infrastructure in Brazilian households, contributing to understanding environmental sustainability and infrastructure development efforts. “Atlas of the 2010 Demographic Census - PGI” (n.d.) <img src="reference/figures/Rplot04.png"> Based on the data, it appears for example that most of the municipalities exhibits poor housing conditions. In this dataset, housing conditions are represented numerically, with ‘1’ indicating correct housing conditions and ‘0’ indicating poor housing conditions. The location map displays all Brazilian municipalities from which data has been collected.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -843,16 +850,23 @@ Number of permanent private households with private bathroom or toilet &amp; was
 </ul>
 </div>
 
+<div class="openwashdata">
+<h2 data-toc-skip>openwashdata</h2>
+<ul class="list-unstyled">
+<li><p>This package is part of <a href="https://openwashdata.org" class="external-link">openwashdata</a>. Browse the <a href="https://openwashdata.org/pages/gallery/data/" class="external-link">data catalogue</a> or get the <a href="https://openwashdata.org/pages/newsletter/" class="external-link">newsletter</a>.</p></li>
+</ul>
+</div>
+
   </aside>
 </div>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Crafted by Lars Schöbitz.</p>
+  <p>Crafted by Lars Schöbitz. Published by <a href="https://openwashdata.org" class="external-link">openwashdata</a>, a project of <a href="https://ghe.ethz.ch/" class="external-link">Global Health Engineering</a> at ETH Zurich.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
+  <p>Package built with <a href="https://openwashdata.github.io/washr/" class="external-link">washr</a> 1.2.1. Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer>
