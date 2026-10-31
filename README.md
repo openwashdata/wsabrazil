@@ -10,6 +10,8 @@
 [![R-CMD-check](https://github.com/openwashdata/wsabrazil/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/openwashdata/wsabrazil/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
+A data package published by [openwashdata](https://openwashdata.org).
+
 This package contains information related to wastewater management
 practices and household infrastructure in Brazil. It includes variables
 such as sector codes, metropolitan region names, municipality codes, and
