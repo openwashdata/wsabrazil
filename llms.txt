@@ -1,7 +1,5 @@
 # wsabrazil
 
-A data package published by [openwashdata](https://openwashdata.org).
-
 This package contains information related to wastewater management
 practices and household infrastructure in Brazil. It includes variables
 such as sector codes, metropolitan region names, municipality codes, and
@@ -165,6 +163,8 @@ Data are available as
 [CC-BY](https://github.com/openwashdata/wsabrazil/blob/main/LICENSE.md).
 
 ## Citation
+
+Published by openwashdata, <https://openwashdata.org>.
 
 To cite this package, please use:
 
