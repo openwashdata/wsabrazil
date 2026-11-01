@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0efd8de65d166a205e0668fc0982be69d4316578884aafcb496cb1f35a1b02bf
-size 3084
+directory,file_name,variable_name,variable_type,description
+data,wsabrazil.rda,sector_code,double,Sector code
+data,wsabrazil.rda,great_region_name,character,Name of the great region
+data,wsabrazil.rda,FU_code,integer,Federation unit code
+data,wsabrazil.rda,FU_name,character,Federation unit name
+data,wsabrazil.rda,meso_code,integer,Mesoregion code
+data,wsabrazil.rda,meso_name,character,Mesoregion name
+data,wsabrazil.rda,micro_code,integer,Microregion code
+data,wsabrazil.rda,micro_name,character,Microregion name
+data,wsabrazil.rda,MR_code,integer,Metropolitan region code
+data,wsabrazil.rda,MR_name,character,Metropolitan region name
+data,wsabrazil.rda,municipality_code,integer,Municipality code
+data,wsabrazil.rda,municipality_name,character,Municipality name
+data,wsabrazil.rda,district_code,integer,District code
+data,wsabrazil.rda,district_name,character,District name
+data,wsabrazil.rda,subdistrict_code,integer,Subdistrict code
+data,wsabrazil.rda,subdistrict_name,character,Subdistrict name
+data,wsabrazil.rda,neighb_code,integer,Neighborhood code
+data,wsabrazil.rda,neighb_name,character,Neighborhood name
+data,wsabrazil.rda,sector_situation,character,Location type: urban or rural
+data,wsabrazil.rda,sector_type,integer,"Living conditions: 1 stands for correct housing conditions, 0 stands for poor housing conditions"
+data,wsabrazil.rda,avg_income,integer,Average nominal monthly income of permanent private households
+data,wsabrazil.rda,total_households,integer,Number of permanent private households
+data,wsabrazil.rda,piped_water,integer,Number of permanent private households with water supply by piped network
+data,wsabrazil.rda,well_spring_water,integer,Number of permanent private households with water supply by property's well or spring
+data,wsabrazil.rda,stored_rainwater,integer,Number of permanent private households with water supply by stored rainwater
+data,wsabrazil.rda,other_water_source,integer,Number of permanent private households with water supply by other source
+data,wsabrazil.rda,private_bathroom,integer,Number of permanent private households with private bathroom or toilet
+data,wsabrazil.rda,bathroom_sewerage,integer,Number of permanent private households with private bathroom or toilet & sanitation via sewerage or drainage network
+data,wsabrazil.rda,bathroom_septic_tank,integer,Number of permanent private households with private bathroom or toilet & sanitation via septic tank
+data,wsabrazil.rda,bathroom_cesspit,integer,Number of permanent private households with private bathroom or toilet & sanitation via cesspit
+data,wsabrazil.rda,bathroom_ditch,integer,Number of permanent private households with private bathroom or toilet & wastewater discharged into ditch
+data,wsabrazil.rda,bathroom_waterbodies,integer,"Number of permanent private households with private bathroom or toilet & wastewater discharged into water bodies (river, lake or sea)"
+data,wsabrazil.rda,bathroom_other,integer,Number of permanent private households with private bathroom or toilet & wastewater discharged into other outlet
